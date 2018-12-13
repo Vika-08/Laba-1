@@ -1,8 +1,8 @@
-#include "list.h"
+п»ї#include "list.h"
 
 List::Node::Node(Note data, Node * ptrNext)
 {
-	cout << "Вызвался конструктор объекта класса Node - " << this << endl;
+	cout << "Р’С‹Р·РІР°Р»СЃСЏ РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ РѕР±СЉРµРєС‚Р° РєР»Р°СЃСЃР° Node - " << this << endl;
 	this->data = data;
 	this->ptrNext = ptrNext;
 	Sleep(970);
@@ -10,7 +10,7 @@ List::Node::Node(Note data, Node * ptrNext)
 
 List::List()
 {
-	cout << "Вызвался конструктор объекта класса List - " << this << endl;
+	cout << "Р’С‹Р·РІР°Р»СЃСЏ РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ РѕР±СЉРµРєС‚Р° РєР»Р°СЃСЃР° List - " << this << endl;
 	length = 0;
 	head = nullptr;
 	tail = nullptr;
@@ -19,7 +19,7 @@ List::List()
 
 List::~List()
 {
-	cout << "Вызвался деструктор объекта класса List - " << this << endl;
+	cout << "Р’С‹Р·РІР°Р»СЃСЏ РґРµСЃС‚СЂСѓРєС‚РѕСЂ РѕР±СЉРµРєС‚Р° РєР»Р°СЃСЃР° List - " << this << endl;
 	while (length != 0)
 	{
 		tail = head->ptrNext;
@@ -34,9 +34,9 @@ void List::set_length()
 {
 	flush_stdin();
 	system("cls");
-	cout << "Введите размер телефонной книги: ";
+	cout << "Р’РІРµРґРёС‚Рµ СЂР°Р·РјРµСЂ С‚РµР»РµС„РѕРЅРЅРѕР№ РєРЅРёРіРё: ";
 	cin >> length;
-	if (length < 1 || length >= 20) throw "Введена неккоректная длина списка!";
+	if (length < 1 || length >= 20) throw "Р’РІРµРґРµРЅР° РЅРµРєРєРѕСЂРµРєС‚РЅР°СЏ РґР»РёРЅР° СЃРїРёСЃРєР°!";
 }
 
 void List::push_back()
@@ -69,7 +69,7 @@ void List::fill_list()
 		for (int i = 0; i < length; i++)
 		{
 			system("cls");
-			cout << "Осталось - " << counter-- << endl;
+			cout << "РћСЃС‚Р°Р»РѕСЃСЊ - " << counter-- << endl;
 			tail->data.set_note();
 			tail = tail->ptrNext;
 		}
@@ -77,7 +77,7 @@ void List::fill_list()
 	else
 	{
 		system("cls");
-		cout << "Сначала введите длину списка!" << endl;
+		cout << "РЎРЅР°С‡Р°Р»Р° РІРІРµРґРёС‚Рµ РґР»РёРЅСѓ СЃРїРёСЃРєР°!" << endl;
 		Sleep(970);
 	}
 }
@@ -90,9 +90,9 @@ void List::show_list()
 		tail = head;
 		system("cls");
 
-		cout << "Телефонная книга" << endl
+		cout << "РўРµР»РµС„РѕРЅРЅР°СЏ РєРЅРёРіР°" << endl
 			<< "-----------------" << endl << endl
-			<< "ID" << "\t\t\t" << "Ф.И.О." << "\t\t\t\t" << "Номер телефона" << "\t\t\t" << "Дата рождения" << endl;
+			<< "ID" << "\t\t\t" << "Р¤.Р.Рћ." << "\t\t\t\t" << "РќРѕРјРµСЂ С‚РµР»РµС„РѕРЅР°" << "\t\t\t" << "Р”Р°С‚Р° СЂРѕР¶РґРµРЅРёСЏ" << endl;
 		for (int i = 0; i < length; i++)
 		{
 			cout << i + 1 << "\t\t\t";
@@ -104,7 +104,7 @@ void List::show_list()
 	else
 	{
 		system("cls");
-		cout << "Сначала введите длину списка!" << endl;
+		cout << "РЎРЅР°С‡Р°Р»Р° РІРІРµРґРёС‚Рµ РґР»РёРЅСѓ СЃРїРёСЃРєР°!" << endl;
 		Sleep(970);
 	}
 }
@@ -117,19 +117,19 @@ void List::sorting_list()
 
 		for (int j = 0; j < length - i - 1; j++)
 		{
-			if (tail->data.get_year() > tail->ptrNext->data.get_year()) // проверяем ГОД рождения соседних элементов
+			if (tail->data.get_year() > tail->ptrNext->data.get_year()) // РїСЂРѕРІРµСЂСЏРµРј Р“РћР” СЂРѕР¶РґРµРЅРёСЏ СЃРѕСЃРµРґРЅРёС… СЌР»РµРјРµРЅС‚РѕРІ
 			{
 				swap_elements(tail->data, tail->ptrNext->data);
 			}
 
-			else if (tail->data.get_year() == tail->ptrNext->data.get_year()) // если ГОДЫ равны, то проверяем МЕСЯЦА
+			else if (tail->data.get_year() == tail->ptrNext->data.get_year()) // РµСЃР»Рё Р“РћР”Р« СЂР°РІРЅС‹, С‚Рѕ РїСЂРѕРІРµСЂСЏРµРј РњР•РЎРЇР¦Рђ
 			{
 				if (tail->data.get_month() > tail->ptrNext->data.get_month())
 				{
 					swap_elements(tail->data, tail->ptrNext->data);
 				}
 
-				else if (tail->data.get_month() == tail->ptrNext->data.get_month()) //  если МЕСЯЦА равны, то проверяем ДНИ
+				else if (tail->data.get_month() == tail->ptrNext->data.get_month()) //  РµСЃР»Рё РњР•РЎРЇР¦Рђ СЂР°РІРЅС‹, С‚Рѕ РїСЂРѕРІРµСЂСЏРµРј Р”РќР
 				{
 					if (tail->data.get_day() > tail->ptrNext->data.get_day())
 					{
@@ -181,7 +181,7 @@ void List::operator++()
 	else
 	{
 		system("cls");
-		cout << "Сначала заполните список!" << endl;
+		cout << "РЎРЅР°С‡Р°Р»Р° Р·Р°РїРѕР»РЅРёС‚Рµ СЃРїРёСЃРѕРє!" << endl;
 		Sleep(970);
 	}
 }
@@ -194,7 +194,7 @@ void List::operator--()
 	if (length > 0)
 	{
 		int index = 0;
-		cout << "Введите ID (1 - " << length << ") человека, которого нужно вычеркнуть из телефонной книги: ";
+		cout << "Р’РІРµРґРёС‚Рµ ID (1 - " << length << ") С‡РµР»РѕРІРµРєР°, РєРѕС‚РѕСЂРѕРіРѕ РЅСѓР¶РЅРѕ РІС‹С‡РµСЂРєРЅСѓС‚СЊ РёР· С‚РµР»РµС„РѕРЅРЅРѕР№ РєРЅРёРіРё: ";
 		cin >> index;
 		if (index > 0 && index <= length)
 		{
@@ -253,14 +253,14 @@ void List::operator--()
 		}
 		else
 		{
-			cout << "Неверный ID!" << endl;
+			cout << "РќРµРІРµСЂРЅС‹Р№ ID!" << endl;
 			Sleep(970);
 		}
 	}
 	else
 	{
 		system("cls");
-		cout << "Сначала введите длину списка!" << endl;
+		cout << "РЎРЅР°С‡Р°Р»Р° РІРІРµРґРёС‚Рµ РґР»РёРЅСѓ СЃРїРёСЃРєР°!" << endl;
 		Sleep(970);
 	}
 }
@@ -275,9 +275,9 @@ void List::show_person()
 			tail = head;
 			int j = 0;
 			int requirements_telephone;
-			cout << "Введите номер телефона (7 цифр): ";
+			cout << "Р’РІРµРґРёС‚Рµ РЅРѕРјРµСЂ С‚РµР»РµС„РѕРЅР° (7 С†РёС„СЂ): ";
 			cin >> requirements_telephone;
-			if (requirements_telephone < 1000000 || requirements_telephone > 9999999) throw "Некорректный номер телефона!";
+			if (requirements_telephone < 1000000 || requirements_telephone > 9999999) throw "РќРµРєРѕСЂСЂРµРєС‚РЅС‹Р№ РЅРѕРјРµСЂ С‚РµР»РµС„РѕРЅР°!";
 			else
 			{
 				for (int i = 0; i < length; i++)
@@ -289,21 +289,21 @@ void List::show_person()
 					}
 					tail = tail->ptrNext;
 				}
-				if (j == 0) cout << "Поиск не увенчался успехом." << endl;
+				if (j == 0) cout << "РџРѕРёСЃРє РЅРµ СѓРІРµРЅС‡Р°Р»СЃСЏ СѓСЃРїРµС…РѕРј." << endl;
 			}
 			system("pause");
 		}
 		else
 		{
 			system("cls");
-			cout << "Сначала заполните массив!" << endl;
+			cout << "РЎРЅР°С‡Р°Р»Р° Р·Р°РїРѕР»РЅРёС‚Рµ РјР°СЃСЃРёРІ!" << endl;
 			Sleep(970);
 		}
 	}
 	else
 	{
 		system("cls");
-		cout << "Сначала введите длину списка!" << endl;
+		cout << "РЎРЅР°С‡Р°Р»Р° РІРІРµРґРёС‚Рµ РґР»РёРЅСѓ СЃРїРёСЃРєР°!" << endl;
 		Sleep(970);
 	}
 }
