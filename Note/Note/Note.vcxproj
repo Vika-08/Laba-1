@@ -146,11 +146,13 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="func.h" />
     <ClInclude Include="header.h" />
     <ClInclude Include="list.h" />
     <ClInclude Include="note.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="func.cpp" />
     <ClCompile Include="list.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="note.cpp" />
