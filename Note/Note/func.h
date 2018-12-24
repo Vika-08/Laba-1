@@ -1,4 +1,4 @@
-#pragma once
+﻿#pragma once
 #include "header.h"
 
 int set_length();

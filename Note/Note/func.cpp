@@ -1,9 +1,9 @@
-#include "func.h"
+ï»¿#include "func.h"
 
 int set_length()
 {
 	int length;
-	cout << "Ââåäèòå ðàçìåð ñïèñêà: ";
+	cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ñ€Ð°Ð·Ð¼ÐµÑ€ ÑÐ¿Ð¸ÑÐºÐ°: ";
 	cin >> length;
 	flush_stdin();
 	return length;
@@ -17,12 +17,12 @@ void flush_stdin()
 
 void set_note(string &name, long long int &telephone, int *arr)
 {
-	cout << "Ââåäèòå ôàìèëèþ è èíèöèàëû ÷åëîâåêà: ";
+	cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ñ„Ð°Ð¼Ð¸Ð»Ð¸ÑŽ Ð¸ Ð¸Ð½Ð¸Ñ†Ð¸Ð°Ð»Ñ‹ Ñ‡ÐµÐ»Ð¾Ð²ÐµÐºÐ°: ";
 	getline(cin, name);
-	cout << "Ââåäèòå íîìåð òåëåôîíà (11 öèôð): ";
+	cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ð½Ð¾Ð¼ÐµÑ€ Ñ‚ÐµÐ»ÐµÑ„Ð¾Ð½Ð° (11 Ñ†Ð¸Ñ„Ñ€): ";
 	cin >> telephone;
 	flush_stdin();
-	cout << "Ââåäèòå ãîä ðîæäåíèÿ (05.04.1998): ";
+	cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ð³Ð¾Ð´ Ñ€Ð¾Ð¶Ð´ÐµÐ½Ð¸Ñ (05.04.1998): ";
 	for (int i = 0; i < 3; i++) cin >> arr[i];
 	flush_stdin();
 }
@@ -30,7 +30,7 @@ void set_note(string &name, long long int &telephone, int *arr)
 int set_ID()
 {
 	int ID;
-	cout << "Ââåäèòå ID ÷åëîâåêà: ";
+	cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ ID Ñ‡ÐµÐ»Ð¾Ð²ÐµÐºÐ°: ";
 	cin >> ID;
 	return ID;
 }
@@ -39,7 +39,7 @@ int set_ID()
 long long int telephone()
 {
 	long long int telephone = 0;
-	cout << "Ââåäèòå òåëåôîí: ";
+	cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ñ‚ÐµÐ»ÐµÑ„Ð¾Ð½: ";
 	cin >> telephone;
 	return telephone;
 }
