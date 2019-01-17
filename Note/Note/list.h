@@ -2,7 +2,7 @@
 
 #include "note.h"
 
-class List : public Note // класс лист - телефонная книга, класс нод - один элемент этого списка
+class List  // класс лист - телефонная книга
 {
 private:
 

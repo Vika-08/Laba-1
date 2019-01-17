@@ -31,4 +31,4 @@ int Note::get_day()
 }
 
 int Note::get_month()
-{
+}
